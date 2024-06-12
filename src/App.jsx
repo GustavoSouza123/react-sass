@@ -1,0 +1,20 @@
+import React from "react";
+import "./css/index.scss";
+
+export default function App() {
+    return (
+        <>
+            <div className="title">
+                <h1>Hello World!</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li>home</li>
+                    <li>about</li>
+                    <li>projects</li>
+                    <li>contact</li>
+                </ul>
+            </nav>
+        </>
+    );
+}

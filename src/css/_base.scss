@@ -1,0 +1,17 @@
+$font-stack: Helvetica, sans-serif;
+$primary-bg: #222;
+$primary-color: #eee;
+$blue: #013dad;
+$orange: #c96203;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 100% $font-stack;
+    color: $primary-color;
+    background-color: $primary-bg;
+}

@@ -1,0 +1,43 @@
+@use 'base';
+
+%align-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    @extend %align-center;
+    margin: 50px 0;
+    font-size: 32px;
+}
+
+.title h1 {
+    color: base.$orange;
+}
+
+nav {
+    ul {
+        background-color: base.$blue;
+        padding: 10px 0;
+        @extend %align-center;
+        
+        li {
+            height: 100%;
+            margin: 0 10px;
+            padding: 10px 15px;
+            cursor: pointer;
+            list-style: none;
+            transition: .2s;
+            border-radius: 3px;
+
+            &:nth-child(2) {
+                background-color: base.$orange;
+            }
+                
+            &:hover {
+                background-color: base.$orange;
+            }
+        }
+    }
+}
