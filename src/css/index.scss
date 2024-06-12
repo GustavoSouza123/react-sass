@@ -77,7 +77,7 @@ nav {
     height: 200px;
 }
 
-$colors: (blue: base.$blue, orange: base.$orange, green: base.$green);
+$colors: ("blue": base.$blue, "orange": base.$orange, "green": base.$green);
 
 @each $key, $color in $colors {
     .#{$key}-bg {
