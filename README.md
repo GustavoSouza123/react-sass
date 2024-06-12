@@ -1,3 +1,3 @@
 # React + Sass
 
-A React project to test Sass concepts
+A React app to test Sass concepts
