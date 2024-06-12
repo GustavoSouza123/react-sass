@@ -1,10 +1,21 @@
 @use 'base';
+@use 'mixins';
 
 %align-center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+@for $i from 1 to 16 {
+    .text-#{$i} { font-size: 15px * $i }
+}
+
+// $x: 1;
+// @while $x <= 5 {
+//     .text-#{$x} { font-size: 15px * $x; }
+//     $x: $x + 1;
+// }
 
 .title {
     @extend %align-center;
@@ -18,9 +29,9 @@
 
 nav {
     ul {
-        background-color: base.$blue;
-        padding: 10px 0;
+        @include mixins.background(base.$green);
         @extend %align-center;
+        padding: 10px 0;
         
         li {
             height: 100%;
@@ -29,10 +40,14 @@ nav {
             cursor: pointer;
             list-style: none;
             transition: .2s;
-            border-radius: 3px;
+            @include mixins.border-radius(3px);
 
             &:nth-child(2) {
                 background-color: base.$orange;
+            }
+
+            &:nth-child(4) {
+                @include mixins.border(light, base.$orange);
             }
                 
             &:hover {
@@ -41,3 +56,37 @@ nav {
         }
     }
 }
+
+.content {
+    @extend %align-center;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 150px;
+    padding: 20px 0;
+    @include mixins.background;
+}
+
+.squares {
+    @extend %align-center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.squares .square {
+    width: 200px;
+    height: 200px;
+}
+
+$colors: (blue: base.$blue, orange: base.$orange, green: base.$green);
+
+@each $key, $color in $colors {
+    .#{$key}-bg {
+        background-color: $color;
+    }
+}
+
+// @each $color in blue, orange, green {
+//     .#{$color}-bg {
+//         background-color: $color;
+//     }
+// }

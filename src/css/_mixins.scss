@@ -1,0 +1,27 @@
+@use 'base';
+
+@mixin background($bg: base.$blue) {
+    background-color: $bg;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin border($val, $color) {
+    @if $val == light {
+        border: 1px solid $color;
+    }
+    @else if $val == medium {
+        border: 3px solid $color;
+    }
+    @else if $val == heavy {
+        border: 6px solid $color;
+    }
+    @else {
+        border: none;
+    }
+}
